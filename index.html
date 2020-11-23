@@ -19,7 +19,16 @@
 
             <div id="root">
 
-                <div class="album" v-for="(album, index) in albumArray">
+                <select class="" name="">
+
+                    <option value="all tipes">All types</option>
+                    <option v-for="genre in genres" :value="genre">{{genre}}</option>
+
+                </select>
+
+                <div class="album"
+                v-for="(album, index) in albumArray"
+                >
                     <img :src="album.poster" :alt="album.title">
                     <h3>{{album.title}}</h3>
                     <p class="author">{{album.author}}</p>

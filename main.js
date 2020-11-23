@@ -1,5 +1,4 @@
-// fare una chiamata ajax per recuperare una decina di dischi musicali e utilizzando vue, stampare a schermo una card per ogni album.
-// L'API da chiamare è: https://flynn.boolean.careers/exercises/api/array/music
+// BONUS 1: Creare una select con tutti i generi dei dischi. In base al genere che viene selezionato nella select, vengono visualizzati i cd corrispondenti.
 
 
 
@@ -8,6 +7,7 @@ var app = new Vue({
 
         data: {
             albumArray: [],
+            genres: [],
 
         },
 
@@ -23,8 +23,17 @@ var app = new Vue({
                     this.albumArray = response.data.response;
 
                     console.log(response.data.response);
-                })
 
+                    this.albumArray.forEach((currentElement, i) => {
+
+                        if (!this.genres.includes(currentElement.genre)) {
+                            this.genres.push(currentElement.genre);
+
+                        }
+
+                    });
+
+                })
         }
 
 });
