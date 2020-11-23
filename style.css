@@ -49,6 +49,7 @@ p {
 .container-album {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .album {
@@ -80,5 +81,6 @@ p {
     margin: auto;
     padding: 10px;
     border-radius: 5px;
-    
+    margin-bottom: 30px;
+
 }

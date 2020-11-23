@@ -30,7 +30,7 @@
 
                     <div class="album"
                     v-for="(album, index) in albumArray"
-                    v-if="(genreChoise == album.genre) || (genreChoise == All types)"
+                    v-if="(genreChoise == album.genre || genreChoise == 'All types')"
                     >
                         <img :src="album.poster" :alt="album.title">
                         <h3>{{album.title}}</h3>
