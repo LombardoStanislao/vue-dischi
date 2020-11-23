@@ -19,22 +19,29 @@
 
             <div id="root">
 
-                <select class="" name="">
+                <select id="select-genre" class="" v-model="genreChoise">
 
-                    <option value="all tipes">All types</option>
+                    <option  value="All types">All types</option>
                     <option v-for="genre in genres" :value="genre">{{genre}}</option>
 
                 </select>
 
-                <div class="album"
-                v-for="(album, index) in albumArray"
-                >
-                    <img :src="album.poster" :alt="album.title">
-                    <h3>{{album.title}}</h3>
-                    <p class="author">{{album.author}}</p>
-                    <p class="year">{{album.year}}</p>
+                <div class="container-album">
+
+                    <div class="album"
+                    v-for="(album, index) in albumArray"
+                    v-if="(genreChoise == album.genre) || (genreChoise == All types)"
+                    >
+                        <img :src="album.poster" :alt="album.title">
+                        <h3>{{album.title}}</h3>
+                        <p class="author">{{album.author}}</p>
+                        <p class="year">{{album.year}}</p>
+
+                    </div>
+
 
                 </div>
+
 
             </div>
 
