@@ -7,7 +7,7 @@ var app = new Vue({
 
         data: {
             albumArray: [],
-            genres: [],
+            genres: ['All types'],
             genreChoise: 'All types',
 
         },
