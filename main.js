@@ -1,4 +1,4 @@
-// 
+//
 // BONUS 2: Ordinare i dischi per anno di uscita.
 
 
@@ -14,12 +14,26 @@ var app = new Vue({
 
         methods: {
 
+
+
         },
 
         mounted() {
 
                 axios.get('https://flynn.boolean.careers/exercises/api/array/music')
                 .then((response) => {
+
+                    function compare(a,b) {
+                      if ( a.year < b.year ){
+                        return -1;
+                      }
+                      if ( a.year > b.year ){
+                        return 1;
+                      }
+                      return 0;
+                    }
+
+                    response.data.response.sort(compare)
 
                     this.albumArray = response.data.response;
 
@@ -35,6 +49,21 @@ var app = new Vue({
                     });
 
                 })
-        }
+        },
+
+  //       computed: {
+  //           sortedArray: function() {
+  //             function compare(a, b) {
+  //               if (a.year < b.year)
+  //                 return -1;
+  //               if (a.year > b.year)
+  //                 return 1;
+  //               return 0;
+  //             }
+  //
+  //     return this.albumArray.sort(compare);
+  //
+  //   }
+  // }
 
 });
